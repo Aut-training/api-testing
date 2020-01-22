@@ -1,4 +1,4 @@
-# Axios Cucumber
+# API testing
 
 Axios API testing with Cucumber, Mocha and Chai.
 
