@@ -61,10 +61,13 @@ Add this configuration to launch.json in .vscode folder in the project.
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "stopOnEntry": true,
             // run the tests in the test folder
-            "args": ["test"],
+            "args": [
+                "tests/*.spec.js",
+                "--no-timeouts"
+            ],
             "cwd": "${workspaceFolder}",
             "runtimeExecutable": null,
-            "env": { },
+            "env": {},
             "console": "integratedTerminal"
         }
     ]

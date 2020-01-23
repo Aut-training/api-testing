@@ -9,7 +9,7 @@ class Spaces {
 
   async getSpaces(teamId) {
     const response = await request.get(`${this.baseUrl}/team/${teamId}${pathUrl}`, { archived: false }, { 'Authorization': this.apiKey });
-    return response;
+    return response.spaces;
   }
 
   async getSpace(spaceId) {

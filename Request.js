@@ -17,6 +17,20 @@ class Request {
       );
     }
   }
+
+  async post(url, data = null, headers = null) {
+    try {
+      const response = await axios.post(url, data, { headers: headers });
+      return response.data;
+    } catch (error) {
+      console.log(
+        {
+          message: error.message,
+          details: error.config
+        }
+      );
+    }
+  }
 }
 
 module.exports = new Request();
