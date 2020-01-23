@@ -23,14 +23,14 @@ describe('Yu-gi-oh card infos', function () {
     expect(card.name).to.eq('Tornado Dragon');
   });
 
-  it('Verifies the exact name of a card querying by name like Twin-Headed', async () => {
+  it('Verifies Twin-Headed Thunder Dragon is returned when querying by name like Twin-Headed', async () => {
     const cards = await yuGiOhApi.cardInfo.getCardsByNameLike('Twin-Headed');
     expect(cards.find(card => card.name === 'Twin-Headed Thunder Dragon')).to.include({
       name: 'Twin-Headed Thunder Dragon'
     });
   });
 
-  it('Verifies there are 8 cards with Attack more or equal than 8000', async () => {
+  it('Verifies there are 8 cards with Attack greater or equal to 5000', async () => {
     const cards = await yuGiOhApi.cardInfo.getCardsWithAttackMoreOrEqualThan(5000);
     expect(cards).to.have.lengthOf(8);
   });
