@@ -22,4 +22,14 @@ describe.only('Clickup API', function () {
     const space = await clickUpApi.spaces.getSpace(3022806);
     expect(space.name).to.eq('Luis Lopez\'s Space');
   });
+
+  it('Verifies the folders in Space', async () => {
+    const folders = await clickUpApi.folders.getFolders(3022806);
+    expect(folders.folders).to.have.lengthOf(1);
+  });
+
+  it('Verifies the folders in Space', async () => {
+    const folder = await clickUpApi.folders.getFolder(3215934);
+    expect(folder.name).to.eq('Sprints and Backlog');
+  });
 });
