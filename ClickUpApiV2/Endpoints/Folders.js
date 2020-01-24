@@ -22,6 +22,11 @@ class Folders {
     return response;
   }
 
+  async deleteFolder(folderId) {
+    const response = await request.delete(`${this.baseUrl}${pathUrl}/${folderId}`, null, { 'Authorization': this.apiKey });
+    return response;
+  }
+
 }
 
 module.exports = Folders;

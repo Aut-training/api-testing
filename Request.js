@@ -31,6 +31,20 @@ class Request {
       );
     }
   }
+
+  async delete(url, data = null, headers = null) {
+    try {
+      const response = await axios.delete(url, { data: data, headers: headers });
+      return response.data;
+    } catch (error) {
+      console.log(
+        {
+          message: error.message,
+          details: error.config
+        }
+      );
+    }
+  }
 }
 
 module.exports = new Request();

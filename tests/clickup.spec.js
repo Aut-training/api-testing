@@ -34,5 +34,8 @@ describe('Clickup API', function () {
   it('Verifies ClickUp creates a folder and returns the folder object to a Space', async () => {
     const createdFolder = await clickUpApi.folders.createFolder(3022806, 'My Folder');
     expect(createdFolder.name).to.eq('My Folder');
+    //Clean test case
+    const emptyObject = await clickUpApi.folders.deleteFolder(createdFolder.id);
+    expect(emptyObject).to.eql({});
   });
 });
