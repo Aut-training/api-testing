@@ -5,7 +5,7 @@ class Request {
     try {
       const response = await request({
         uri: url,
-        qs: params,
+        qs: (params == null) ? {} : params,
         headers: headers,
         json: true
       });
@@ -25,7 +25,7 @@ class Request {
       const response = await request({
         method: 'POST',
         uri: url,
-        body: data,
+        body: (data == null) ? {} : data,
         headers: headers,
         json: true
       });
@@ -45,10 +45,11 @@ class Request {
       const response = await request({
         method: 'DELETE',
         uri: url,
-        body: data,
-        headers: headers
+        body: (data == null) ? {} : data,
+        headers: headers,
+        json: true
       });
-      return JSON.parse(response);
+      return response;
     } catch (error) {
       console.log(
         {
