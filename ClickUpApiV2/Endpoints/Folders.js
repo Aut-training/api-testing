@@ -1,5 +1,5 @@
 const pathUrl = '/folder';
-const request = require('../../Requesters/Axios');
+const request = require('../../Requesters/Request');
 
 class Folders {
   constructor(baseUrl, apiKey) {

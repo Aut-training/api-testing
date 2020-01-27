@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const clickUpApi = require('../ClickUpApiV2/ClickUpApi');
 
-describe('Clickup API', function () {
+describe.only('Clickup API', function () {
 
   beforeEach(() => {
 
@@ -31,11 +31,11 @@ describe('Clickup API', function () {
     expect(folder.name).to.eq('Sprints and Backlog');
   });
 
-  it('Verifies ClickUp creates a folder and returns the folder object to a Space', async () => {
+  it.only('Verifies ClickUp creates a folder and returns the folder object to a Space', async () => {
     const createdFolder = await clickUpApi.folders.createFolder(3022806, 'My Folder');
     expect(createdFolder.name).to.eq('My Folder');
     //Clean test case
-    const emptyObject = await clickUpApi.folders.deleteFolder(createdFolder.id);
+    const emptyObject = await clickUpApi.folders.deleteFolder(3217674);
     expect(emptyObject).to.eql({});
   });
 });
