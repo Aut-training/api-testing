@@ -1,5 +1,5 @@
 const pathUrl = '/cardsets.php';
-const request = require('../../Requesters/Axios');
+const request = require('../../Requesters/Request');
 
 class CardSet {
   constructor(baseUrl) {

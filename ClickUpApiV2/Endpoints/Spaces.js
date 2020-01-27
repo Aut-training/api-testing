@@ -1,5 +1,5 @@
 const pathUrl = '/space';
-const request = require('../../Requesters/Axios');
+const request = require('../../Requesters/Request');
 
 class Spaces {
   constructor(baseUrl, apiKey) {
