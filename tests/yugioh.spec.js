@@ -42,7 +42,7 @@ describe('Yu-gi-oh card infos', function () {
     });
   });
 
-  it('Verifies the set Crossroads of Chaos: Special Edition is present in sets database', async () => {
+  it.skip('Verifies the set Crossroads of Chaos: Special Edition is present in sets database', async () => {
     const cardSets = await yuGiOhApi.cardSet.getCardSets();
     expect(cardSets.find(cardSet => cardSet['Set Name'] === 'Crossroads of Chaos: Special Edition')).to.include({
       'Set Name': 'Crossroads of Chaos: Special Edition'
