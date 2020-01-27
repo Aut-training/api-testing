@@ -1,5 +1,5 @@
 const pathUrl = '/cardinfo.php';
-const request = require('../../Requesters/Request');
+const request = require('../../Requesters/SuperAgent');
 
 class CardInfo {
   constructor(baseUrl) {

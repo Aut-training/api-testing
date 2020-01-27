@@ -1,5 +1,5 @@
 const pathUrl = '/folder';
-const request = require('../../Requesters/Request');
+const request = require('../../Requesters/SuperAgent');
 
 class Folders {
   constructor(baseUrl, apiKey) {

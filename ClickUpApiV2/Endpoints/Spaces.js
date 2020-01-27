@@ -1,5 +1,5 @@
 const pathUrl = '/space';
-const request = require('../../Requesters/Request');
+const request = require('../../Requesters/SuperAgent');
 
 class Spaces {
   constructor(baseUrl, apiKey) {
