@@ -46,10 +46,9 @@ class Request {
         method: 'DELETE',
         uri: url,
         body: data,
-        headers: headers,
-        json: true
+        headers: headers
       });
-      return response;
+      return JSON.parse(response);
     } catch (error) {
       console.log(
         {
