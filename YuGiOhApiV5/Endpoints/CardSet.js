@@ -1,13 +1,13 @@
 const pathUrl = '/cardsets.php';
-const request = require('../../Requesters/SuperAgent');
 
 class CardSet {
-  constructor(baseUrl) {
+  constructor(baseUrl, request) {
     this.baseUrl = baseUrl + pathUrl;
+    this.request = request;
   }
 
   async getCardSets() {
-    const response = await request.get(this.baseUrl);
+    const response = await this.request.get(this.baseUrl);
     return response;
   }
 }

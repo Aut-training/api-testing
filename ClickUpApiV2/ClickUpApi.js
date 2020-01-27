@@ -1,5 +1,6 @@
 const spaces = require('./Endpoints/Spaces');
 const folders = require('./Endpoints/Folders');
+const request = require('../Requesters/SuperAgent');
 const apiKey = 'pk_3023811_ND9FAB6MPKZRPJXSC81IUEVCQNN3O1Q3';
 
 class ClickUpApi {
@@ -12,11 +13,11 @@ class ClickUpApi {
   }
 
   get spaces() {
-    return new spaces(this.baseURL, apiKey);
+    return new spaces(this.baseURL, request, apiKey);
   }
 
   get folders() {
-    return new folders(this.baseURL, apiKey);
+    return new folders(this.baseURL, request, apiKey);
   }
 
 }

@@ -1,28 +1,28 @@
 const pathUrl = '/cardinfo.php';
-const request = require('../../Requesters/SuperAgent');
 
 class CardInfo {
-  constructor(baseUrl) {
+  constructor(baseUrl, request) {
     this.baseUrl = baseUrl + pathUrl;
+    this.request = request;
   }
 
   async getCardByName(name) {
-    const response = await request.get(this.baseUrl, { name: name });
+    const response = await this.request.get(this.baseUrl, { name: name });
     return response[0];
   }
 
   async getCardsByNameLike(fname) {
-    const response = await request.get(this.baseUrl, { fname: fname });
+    const response = await this.request.get(this.baseUrl, { fname: fname });
     return response;
   }
 
   async getCardsWithAttackMoreOrEqualThan(atk) {
-    const response = await request.get(this.baseUrl, { atk: `gte${atk}` });
+    const response = await this.request.get(this.baseUrl, { atk: `gte${atk}` });
     return response;
   }
 
   async getCardsByRace(race) {
-    const response = await request.get(this.baseUrl, { race: race });
+    const response = await this.request.get(this.baseUrl, { race: race });
     return response;
   }
 }
